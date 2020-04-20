@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
   currentPath : String = '';
   space_usage_details: any;
 
-
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
