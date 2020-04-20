@@ -1,0 +1,9 @@
+<div *ngFor="let item of response_html">
+    <p *ngIf="item.directory">
+        <button (click) = "getContents(item.filePath)"> {{item.filePath}} </button>
+    </p>
+    <p *ngIf="!(item.directory)">
+        {{item.filePath}}
+    </p>
+</div> 
+
