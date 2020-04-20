@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   response_html : Array<Object> = [];
   home : String = 'C:\\Users\\Ajay\\Documents\\nasrpi-test';
   currentPath : String = '';
+  space_usage_details: any;
 
   constructor(private http: HttpClient) { }
 
@@ -68,5 +69,12 @@ export class HomeComponent implements OnInit {
       console.log(response);
     }
     )
+  }
+
+  getSpaceUsage() {
+    this.http.get('http://localhost:8080/getSpaceUsage').subscribe((response) => {
+      this.space_usage_details = response;
+      console.log(this.space_usage_details);
+    })
   }
 }
