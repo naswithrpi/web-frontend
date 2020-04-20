@@ -9,6 +9,9 @@ import { HttpClient } from '@angular/common/http';
 export class HomeComponent implements OnInit {
 
   response_html : Array<Object> = [];
+  home : String = 'C:\\Users\\Ajay\\Documents\\nasrpi-test';
+  back : String = '';
+
   constructor( private http : HttpClient) { }
 
   ngOnInit() {
@@ -23,6 +26,9 @@ export class HomeComponent implements OnInit {
 
   getContents(path){
     console.log("success");
+
+    this.getBackPath(path);
+
     this.http.post('http://localhost:8080/getContents', path).subscribe((response) => {
       this.response_html = [];
       for(let responseObject in response){
@@ -30,6 +36,16 @@ export class HomeComponent implements OnInit {
         console.log(this.response_html[responseObject].filePath)
       }
     })
+  }
+
+  getBackPath(path){
+    this.back = "";
+    let pathArray = path.split('\\');
+    for(let i = 0; i < pathArray.length-1; i++){
+      console.log(pathArray[i]);
+      this.back += pathArray[i] + "\\";
+    }
+    console.log(this.back);
   }
 
 }
