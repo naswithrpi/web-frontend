@@ -7,9 +7,11 @@
 <div *ngFor="let item of response_html">
     <p *ngIf="item.directory">
         <button (click) = "getContents(item.filePath)"> {{item.filePath}} </button>
+        <button (click) = "delete(item.filePath)" > Delete</button>
     </p>
     <p *ngIf="!(item.directory)">
         {{item.filePath}}
+        <button (click) = "delete(item.filePath)" > Delete</button>
     </p>
 </div> 
 
