@@ -8,10 +8,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
-  response_html : Array<Object> = [];
-  home : String = 'C:\\Users\\Ajay\\Documents\\nasrpi-test';
-  currentPath : String = '';
+  response_html: Array<Object> = [];
+  home: String;
+  currentPath: String = '';
   space_usage_details: any;
+  dir_name: string = '';
 
   constructor(private http: HttpClient) { }
 
@@ -23,52 +24,57 @@ export class HomeComponent implements OnInit {
         // console.log(this.response_html[responseObject].filePath)
       }
       this.updateCurrentPath(response[0].filePath);
+      this.home = this.currentPath;
     });
   }
 
-  getContents(path){
-    // console.log("success");
-
+  getContents(path) {
     this.http.post('http://localhost:8080/getContents', path).subscribe((response) => {
       this.response_html = [];
       for (let responseObject in response) {
         this.response_html.push(response[responseObject]);
-        // console.log(this.response_html[responseObject].filePath)
       }
-      this.updateCurrentPath(response[0].filePath);
+      if (Object.keys(response).length) {
+        this.updateCurrentPath(response[0].filePath);
+      } else {
+        console.log(path);
+        this.updateCurrentPath(path);
+      }
     })
   }
 
-  getBackPath(){
-    let back = "";
-    let pathArray = this.currentPath.split('\\');
-    for(let i = 0; i < pathArray.length-2; i++){
-      console.log(pathArray[i]);
-      back += pathArray[i] + "\\";
+  getBackPath() {
+    if (this.currentPath != this.home) {
+      let back = "";
+      let pathArray = this.currentPath.split('\\');
+      for (let i = 0; i < pathArray.length - 2; i++) {
+        console.log(pathArray[i]);
+        back += pathArray[i] + "\\";
+      }
+      // console.log("back " , back);
+      this.getContents(back);
     }
-    // console.log("back " , back);
-    this.getContents(back);
+
   }
 
-  updateCurrentPath(path){
+  updateCurrentPath(path) {
     this.currentPath = '';
     let pathArray = path.split('\\');
-    for(let i = 0; i < pathArray.length-1; i++){
-      // console.log(pathArray[i]);
+    for (let i = 0; i < pathArray.length - 1; i++) {
       this.currentPath += pathArray[i] + "\\";
     }
-    // console.log("current " , this.currentPath);
+    console.log("current ", this.currentPath);
   }
 
-  refresh(){
+  refresh() {
     this.getContents(this.currentPath);
   }
 
   delete(path) {
     this.http.post('http://localhost:8080/delete', path).subscribe((response) => {
       console.log(response);
-    }
-    )
+    })
+    this.refresh();
   }
 
   getSpaceUsage() {
@@ -76,5 +82,16 @@ export class HomeComponent implements OnInit {
       this.space_usage_details = response;
       console.log(this.space_usage_details);
     })
+  }
+
+  createDirectory() {
+    let path = this.currentPath;
+    path = path.split('\\').join('\\\\');
+    path = path.concat(this.dir_name);
+    console.log('create: ', path);
+    this.http.post('http://localhost:8080/createDirectory', path).subscribe((response) => {
+      console.log(response);
+    })
+    this.refresh();
   }
 }

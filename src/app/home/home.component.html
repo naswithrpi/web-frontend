@@ -3,7 +3,7 @@
 
     <button (click)="getBackPath(back)"> Back </button>
 
-    <button (click)="refersh()"> Refresh </button>
+    <button (click)="refresh()"> Refresh </button>
 
     <button (click)="getSpaceUsage()"> Get Space Usage </button>
 
@@ -19,6 +19,13 @@
         </p>
     </div>
 
+    <br />
+
+    <div>
+        Enter the name of directory:
+        <input type="text" [(ngModel)]="dir_name" />
+        <button (click)="createDirectory()">Create</button>
+    </div>
 </div>
 
 <div *ngFor="let item of response_html">
