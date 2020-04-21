@@ -26,6 +26,12 @@
         <input type="text" [(ngModel)]="dir_name" />
         <button (click)="createDirectory()">Create</button>
     </div>
+
+    <div>
+        Search in current directory:
+        <input type="text" [(ngModel)]="search_key" />
+        <button (click)="search()"> Search </button>
+    </div>
 </div>
 
 <div *ngFor="let item of response_html">
