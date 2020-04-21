@@ -100,6 +100,10 @@
                 <div class="rightBottomButtons">
                     <button class="back" (click)="getBackPath(back)"> Back </button> 
                     <button class="back" (click)="refresh()" style="width: fit-content !important; margin-left: 10px !important;"> Refresh </button> 
+                    <button class="back" (click)="getDirectoryName()" style="width: fit-content !important; margin-left: 10px !important;">Create</button>
+                    <a *ngIf="createDirectoryFlag" style="font-family: 'Courier New', Courier, monospace;"> Enter the name of directory:
+                        <input type="text" [(ngModel)]="dir_name"/> <button class="back" (click)="createDirectory()" style="width: fit-content !important; margin-left: 10px !important;"> OK </button> </a>
+                    
                 </div>
                 <div class="contents">
                     <a *ngFor="let item of response_html">
