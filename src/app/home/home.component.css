@@ -1,0 +1,162 @@
+div.base{
+    width: 1080px;
+    height: 640px;
+    
+}
+
+div.left{
+    width: 257px;
+    height: 640px;
+    float: left;
+    background: #292F36 0% 0% no-repeat padding-box;
+    border-radius: 0px 25px 25px 0px;
+    opacity: 1;
+}
+
+div.leftTop{
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 257px;
+    height: 120px;
+    border-radius: 0px 25px 25px 0px;
+}
+p.name{
+    margin-left: 0px;
+    color: #4ECDC4;
+    opacity: 1;
+}
+
+div.leftBottom{
+    margin-top: 10px;
+    margin-left: 0px;
+    width: 257px;
+    height: 500px;
+}
+
+div.leftBottomButtons{
+    top: 250px;
+    left: 0px;
+    width: 257px;
+    height: 69px;
+    opacity: 1;
+}
+
+button.home{
+    top: 272px;
+    margin-left: 0px;
+    width: 255px;
+    height: 69px;
+    text-align: left;
+    font: Regular 18px/27px Poppins;
+    background: #292F36 0% 0% no-repeat padding-box;
+    letter-spacing: 1.37px;
+    color: #FFFFFF;
+    opacity: 1;
+    border: 0px;
+}
+
+button.home:hover{
+    background-color: #4ecdc4;
+    color: white;
+}
+
+div.right{
+    width: 800px;
+    height: 640px;
+    float: right;
+}
+
+div.rightTop{
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 1070px;
+    height: 120px;
+}
+div.rightTopLeft{
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 500px;
+    height: 120px;
+    float: left;
+}
+
+div.rightTopRight{
+    margin-top: 0px;
+    margin-left: 10px;
+    width: 500px;
+    height: 120px;
+    float: right;
+}
+
+div.search{
+    margin-top: 20px;
+    margin-left: 100px;
+    width: 350px;
+    height: 30px;
+    border: 2px solid #4ECDC4;
+    border-radius: 40px;
+    opacity: 1;
+}
+
+div.rightBottom{
+    margin-top: 10px;
+    margin-left: 0px;
+    width: 1070px;
+    height: 500px;
+    background: #F3F3F3 0% 0% no-repeat padding-box;
+    border: 1px solid #E0E0E0;
+    border-radius: 25px 25px 0px 0px;
+    opacity: 1;
+}
+
+div.rightBottomButtons{
+    margin-top: 10px;
+    margin-left: 0px;
+    width: 1070px;
+    height: 30px;
+}
+
+button.back{
+    margin-top: 8px;
+    margin-left: 30px;
+    width: 40px;
+    height: 20px;
+    background: #4ECDC4 0% 0% no-repeat padding-box;
+    opacity: 1;
+    border: 0px;
+    color: #FFFFFF;
+    border-radius: 2px 2px 2px 2px;
+}
+
+div.contents{
+    margin-top: 10px;
+    margin-left: 0px;
+    width: 1070px;
+    height: 450px;
+    background: #292F36 0% 0% no-repeat padding-box;
+}
+
+button.directory{
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 273px;
+    height: 55px;
+    background: #E0E0E0 0% 0% no-repeat padding-box;
+    border-radius: 13px;
+    opacity: 1;
+}
+
+button.file{
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 273px;
+    height: 90px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 13px;
+    opacity: 0.9;
+}
+
+
+
+
+
