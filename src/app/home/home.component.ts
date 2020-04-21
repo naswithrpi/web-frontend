@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   currentPath: String = '';
   space_usage_details: any;
   dir_name: string = '';
+  getUsage: boolean = false;
   search_key: string = '';
 
   constructor(private http: HttpClient) { }
@@ -79,6 +80,7 @@ export class HomeComponent implements OnInit {
   }
 
   getSpaceUsage() {
+    this.getUsage = !this.getUsage;
     this.http.get('http://localhost:8080/getSpaceUsage').subscribe((response) => {
       this.space_usage_details = response;
       console.log(this.space_usage_details);
