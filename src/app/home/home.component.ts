@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   space_usage_details: any;
   dir_name: string = '';
   getUsage: boolean = false;
+  search_key: string = '';
 
   constructor(private http: HttpClient) { }
 
@@ -95,5 +96,18 @@ export class HomeComponent implements OnInit {
       console.log(response);
     })
     this.refresh();
+  }
+
+  search() {
+    let path = this.currentPath;
+    path = path.split('\\').join('\\\\');
+    const search_obj = {
+      'currentPath': path,
+      'searchKey': this.search_key
+    }
+    console.log(search_obj);
+    this.http.post('http://localhost:8080/search', search_obj).subscribe((response) => {
+      console.log(response);
+    });
   }
 }
