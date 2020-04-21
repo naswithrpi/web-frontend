@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   dir_name: string = '';
   getUsage: boolean = false;
   search_key: string = '';
+  createDirectoryFlag: boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -74,6 +75,7 @@ export class HomeComponent implements OnInit {
 
   delete(path) {
     this.http.post('http://localhost:8080/delete', path).subscribe((response) => {
+      this.refresh();
       console.log(response);
     })
     this.refresh();
@@ -87,6 +89,10 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  getDirectoryName(){
+    this.createDirectoryFlag = true;
+  }
+
   createDirectory() {
     let path = this.currentPath;
     path = path.split('\\').join('\\\\');
@@ -96,6 +102,7 @@ export class HomeComponent implements OnInit {
       console.log(response);
     })
     this.refresh();
+    this.createDirectoryFlag = false;
   }
 
   search() {
