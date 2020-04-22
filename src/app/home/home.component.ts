@@ -13,6 +13,11 @@ export class HomeComponent implements OnInit {
   currentPath: String = '';
   space_usage_details: any;
   dir_name: string = '';
+  getUsage: boolean = false;
+  search_key: string = '';
+  createDirectoryFlag: boolean = false;
+  public innerWidth: any;
+  public innerHeight: any;
 
   constructor(private http: HttpClient) { }
 
@@ -26,6 +31,10 @@ export class HomeComponent implements OnInit {
       this.updateCurrentPath(response[0].filePath);
       this.home = this.currentPath;
     });
+    //to get the width and height of the browser window
+    this.innerWidth = window.innerWidth;
+    this.innerHeight = window.innerHeight;
+    console.log(this.innerWidth, this.innerHeight);
   }
 
   getContents(path) {
@@ -72,16 +81,22 @@ export class HomeComponent implements OnInit {
 
   delete(path) {
     this.http.post('http://localhost:8080/delete', path).subscribe((response) => {
+      this.refresh();
       console.log(response);
     })
     this.refresh();
   }
 
   getSpaceUsage() {
+    this.getUsage = !this.getUsage;
     this.http.get('http://localhost:8080/getSpaceUsage').subscribe((response) => {
       this.space_usage_details = response;
       console.log(this.space_usage_details);
     })
+  }
+
+  getDirectoryName(){
+    this.createDirectoryFlag = true;
   }
 
   createDirectory() {
@@ -93,5 +108,19 @@ export class HomeComponent implements OnInit {
       console.log(response);
     })
     this.refresh();
+    this.createDirectoryFlag = false;
+  }
+
+  search() {
+    let path = this.currentPath;
+    path = path.split('\\').join('\\\\');
+    const search_obj = {
+      'currentPath': path,
+      'searchKey': this.search_key
+    }
+    console.log(search_obj);
+    this.http.post('http://localhost:8080/search', search_obj).subscribe((response) => {
+      console.log(response);
+    });
   }
 }

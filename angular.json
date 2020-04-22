@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "nasrpi-ui"
+    }
+  },
+  "defaultProject": "nasrpi-ui",
+  "cli": {
+    "analytics": "98267f12-9e55-4791-8f5d-14dc3be20ee0"
+  }
 }
