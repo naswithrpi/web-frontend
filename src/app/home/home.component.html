@@ -48,19 +48,17 @@
 <div class="base">
     <div class="left">
        <div class="leftTop">
-            <p class="name" style="font-family: 'Courier New', Courier, monospace; font-size: medium; text-align: center;" >
-                nas with rpi
-            </p>
+           <img src = "assets/images/Logo.png" alt= "nasrpi logo" class="logo">
        </div>
        <div class="leftBottom">
             <div class="leftBottomButtons">
-                <button class="home" (click)="getContents(home)"> <p style="text-align: center;">Home</p> </button>
+                <button class="home" (click)="getContents(home)"> <p>Home</p> </button>
             </div>
-            <div class="leftBottomButtons" style="margin-top: 10px !important;">
-                <button class="home"> <p style="text-align: center;">Recent</p> </button>
+            <div class="leftBottomButtons">
+                <button class="home"> <p>Recent</p> </button>
             </div>
-            <div class="leftBottomButtons" style="margin-top: 10px !important;">
-                <button class="home" (click)="getSpaceUsage()"> <p style="text-align: center;">Storage</p> </button>
+            <div class="leftBottomButtons">
+                <button class="home" (click)="getSpaceUsage()"> <p>Storage</p> </button>
 
                 <a *ngIf="getUsage">
                     <a *ngFor="let item of space_usage_details">
@@ -79,16 +77,19 @@
 
             </div>
             <div class="leftBottomButtons" style="margin-top: 10px !important;">
-                <button class="home"> <p style="text-align: center;">Settings</p> </button>
+                <button class="home"> <p>Settings</p> </button>
             </div>
+
+            <div class="copyright">
+                <p>Copyright<br>nasrpi</p>
+            </div>
+
        </div>
     </div>
     <div class="right">
             <div class="rightTop">
                 <div class="rightTopLeft">
-                    <p style="font-family: 'Courier New', Courier, monospace; font-size: x-large;"> 
-                        Welcome back, Monica! 
-                    </p>
+                    <p class="welcome"> Welcome back, Monica! </p>
                 </div>
                 <div class="rightTopRight">
                     <div class="search">

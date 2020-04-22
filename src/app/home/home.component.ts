@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
   getUsage: boolean = false;
   search_key: string = '';
   createDirectoryFlag: boolean = false;
+  public innerWidth: any;
+  public innerHeight: any;
 
   constructor(private http: HttpClient) { }
 
@@ -29,6 +31,10 @@ export class HomeComponent implements OnInit {
       this.updateCurrentPath(response[0].filePath);
       this.home = this.currentPath;
     });
+    //to get the width and height of the browser window
+    this.innerWidth = window.innerWidth;
+    this.innerHeight = window.innerHeight;
+    console.log(this.innerWidth, this.innerHeight);
   }
 
   getContents(path) {
