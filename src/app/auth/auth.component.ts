@@ -34,10 +34,12 @@ export class AuthComponent implements OnInit {
   }
 
   createPassword(username: String, password: String) {
-    let obs = this.http.post('http://localhost:8080/login', {
+    const credentials = {
       'username': username,
       'password': password
-    });
+    }
+    const config = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
+    let obs = this.http.post('http://localhost:8080/createPassword', credentials, config);
     obs.subscribe((response) => {
       console.log(response)
     })
