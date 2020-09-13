@@ -140,4 +140,30 @@ export class HomeComponent implements OnInit {
       console.log('Please select a file.')
     }
   }
+
+  moveFile(source: string, destination: string) {
+    const obj = {
+      'source': source,
+      'destination': destination
+    }
+    this.http.post('http://localhost:8080/moveFile', obj, {
+      headers: {
+        'content-type': 'application/json'
+      }
+    }).subscribe((response) => {
+      console.log(response)
+      this.refresh()
+    })
+  }
+
+  moveFolder(source: string, destination: string) {
+    const obj = {
+      'source': source,
+      'destination': destination
+    }
+    this.http.post('http://localhost:8080/moveFolder', obj).subscribe((response) => {
+      console.log(response)
+      this.refresh()
+    })
+  }
 }
