@@ -51,12 +51,15 @@ export class HomeComponent implements OnInit {
     if (this.currentPath != this.home) {
       let back = "";
       let pathArray = this.currentPath.split('\\');
+      console.log('Path array:', pathArray)
       for (let i = 0; i < pathArray.length - 2; i++) {
         console.log(pathArray[i]);
         back += pathArray[i] + "\\";
       }
-      // console.log("back " , back);
+      console.log("back ", back);
       this.getContents(back);
+    } else {
+      console.log('Already on home')
     }
 
   }
@@ -71,6 +74,7 @@ export class HomeComponent implements OnInit {
   }
 
   refresh() {
+    console.log('Refreshing')
     this.getContents(this.currentPath);
   }
 
@@ -165,5 +169,9 @@ export class HomeComponent implements OnInit {
       console.log(response)
       this.refresh()
     })
+  }
+
+  onTextEntered(event) {
+    console.log(event)
   }
 }
