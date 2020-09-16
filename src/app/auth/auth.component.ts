@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
   }
@@ -27,10 +28,7 @@ export class AuthComponent implements OnInit {
     }
     const config = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
 
-    let obs = this.http.post('http://localhost:8080/login', credentials, config);
-    obs.subscribe((response) => {
-      console.log(response)
-    });
+    return this.http.post('http://localhost:8080/login', credentials, config);
   }
 
   createPassword(username: String, password: String) {
@@ -39,8 +37,34 @@ export class AuthComponent implements OnInit {
       'password': password
     }
     const config = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
-    let obs = this.http.post('http://localhost:8080/createPassword', credentials, config);
-    obs.subscribe((response) => {
+    return this.http.post('http://localhost:8080/createPassword', credentials, config);
+  }
+
+  signIn() {
+    // Accept input from FORMS
+
+    this.login('nasrpi', 'password').subscribe((response) => {
+      console.log(response)
+      if (response) {
+        console.log('User logged in successfully')
+        this.router.navigateByUrl('/home')
+      }
+      else {
+        console.log("Please enter correct credentials")
+      }
+    });
+  }
+
+  signUp() {
+    // Accept input from FORMS
+
+    this.createPassword('nasrpi', 'password').subscribe((response) => {
+      if (response) {
+        console.log('Password created successfully')
+        this.router.navigateByUrl('/home')
+      } else {
+        console.log('Error creating password')
+      }
       console.log(response)
     })
   }
