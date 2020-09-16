@@ -10,12 +10,13 @@ export class HomeComponent implements OnInit {
 
   response_html: Array<Object> = [];
   home: String;
-  currentPath: String = '';
+  currentPath: string = '';
   space_usage_details: any;
   dir_name: string = '';
   getUsage: boolean = false;
   search_key: string = '';
   createDirectoryFlag: boolean = false;
+  selectedFile: File = null;
 
   constructor(private http: HttpClient) { }
 
@@ -89,7 +90,7 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  getDirectoryName(){
+  getDirectoryName() {
     this.createDirectoryFlag = true;
   }
 
@@ -116,5 +117,53 @@ export class HomeComponent implements OnInit {
     this.http.post('http://localhost:8080/search', search_obj).subscribe((response) => {
       console.log(response);
     });
+  }
+
+  onFileSelected(event) {
+    console.log(event.target.files)
+    this.selectedFile = <File>event.target.files[0]
+  }
+
+  onUpload() {
+    if (this.selectedFile != null) {
+      console.log(this.selectedFile)
+
+      const fileUpload = new FormData();
+      fileUpload.append('file', this.selectedFile);
+      fileUpload.append('path', this.currentPath);
+
+      this.http.post('http://localhost:8080/uploadFile', fileUpload).subscribe((response) => {
+        console.log(response);
+        this.refresh()
+      });
+    } else {
+      console.log('Please select a file.')
+    }
+  }
+
+  moveFile(source: string, destination: string) {
+    const obj = {
+      'source': source,
+      'destination': destination
+    }
+    this.http.post('http://localhost:8080/moveFile', obj, {
+      headers: {
+        'content-type': 'application/json'
+      }
+    }).subscribe((response) => {
+      console.log(response)
+      this.refresh()
+    })
+  }
+
+  moveFolder(source: string, destination: string) {
+    const obj = {
+      'source': source,
+      'destination': destination
+    }
+    this.http.post('http://localhost:8080/moveFolder', obj).subscribe((response) => {
+      console.log(response)
+      this.refresh()
+    })
   }
 }
