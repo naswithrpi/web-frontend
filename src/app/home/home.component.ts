@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ResponseModel } from './response';
 
 @Component({
   selector: 'home',
@@ -8,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
-  response_html: Array<Object> = [];
+  response_html: Array<ResponseModel> = [];
   home: String;
   currentPath: string = '';
   space_usage_details: any;
