@@ -26,6 +26,24 @@
             <path
                 d="M 20.99299430847168 23.06884574890137 L 32.18524169921875 11.8677864074707 C 33.01364517211914 11.03938293457031 34.35318756103516 11.03938293457031 35.17277908325195 11.8677864074707 C 35.99237060546875 12.69618797302246 35.99237060546875 14.03573226928711 35.17277908325195 14.8641357421875 L 22.49116897583008 27.5545597076416 C 21.68920707702637 28.35652160644531 20.40253639221191 28.37414932250977 19.57413482666016 27.61624908447266 L 6.804395198822021 14.87294769287109 C 6.390194416046143 14.4587459564209 6.1875 13.912353515625 6.1875 13.3747730255127 C 6.1875 12.83719253540039 6.390194416046143 12.29080009460449 6.804395198822021 11.8765983581543 C 7.632797718048096 11.04819679260254 8.972343444824219 11.04819679260254 9.791933059692383 11.8765983581543 L 20.99299430847168 23.06884574890137 Z" />
         </svg>
+        
+        <!-- Default form login -->
+            <form [formGroup]="signInForm" (ngSubmit)="signIn(signInForm.value)">
+
+                <p class="h4">Sign in</p>
+            
+                <!-- Username -->
+                <input type="text" formControlName="username" class="form-control mb-4" placeholder="Username">
+            
+                <!-- Password -->
+                <input type="password" formControlName="password" class="form-control mb-4" placeholder="Password">
+            
+                <!-- Sign in button --> 
+                <button mdbBtn block="true" class="my-4" type="submit">Sign in</button>
+            
+            </form>
+  <!-- Default form login -->
+        
         <div class="component81">
             <div class="rectangle11"></div>
             <svg preserveAspectRatio="none" viewBox="0 0 440 74" class="path202">
@@ -34,14 +52,15 @@
             </svg>
             <div class="signUp5e4610ff">Sign up</div>
             <div class="group34">
-                <div class="buttone054a031" (click)="signUp()">
+                <div class="buttone054a031" (click)="signUp(username, password)">
                     <div class="rectangle15e039ec0e"></div>
                     <div class="signUp">Sign up</div>
                 </div>
                 <div class="textField71aa0bce"> <svg preserveAspectRatio="none" viewBox="-0.375 -0.375 302.75 0.75"
                         class="path20339542bbc">
                         <path d="M 0 0 L 302 0" /></svg>
-                    <div class="eMail">E-mail</div>
+                    <input text="text" #username>
+                    <div class="eMail">Username</div>
                 </div>
                 <div class="textFieldafe22df2"> <svg preserveAspectRatio="none" viewBox="-0.375 -0.375 140.75 0.75"
                         class="path20381a0098d">
@@ -56,6 +75,7 @@
                 <div class="textField"> <svg preserveAspectRatio="none" viewBox="-0.375 -0.375 302.75 0.75"
                         class="path201">
                         <path d="M 0 0 L 302 0" /></svg>
+                    <input text="text" #password>
                     <div class="password">Password</div>
                 </div>
                 <div class="byClickingSignUpYouAgreeToOurTermsOfService">By clicking sign up, you agree to our terms of

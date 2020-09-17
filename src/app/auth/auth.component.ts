@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-auth',
@@ -8,8 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
+signInForm;
+signUpForm;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private formBuilder : FormBuilder ) { }
 
   ngOnInit() {
   }
@@ -41,9 +44,12 @@ export class AuthComponent implements OnInit {
   }
 
   signIn() {
-    // Accept input from FORMS
+    this.signInForm = this.formBuilder.group({
+      username: '',
+      password: ''
+    });
 
-    this.login('nasrpi', 'password').subscribe((response) => {
+    this.login(this.signInForm['username'], this.signInForm['password']).subscribe((response) => {
       console.log(response)
       if (response) {
         console.log('User logged in successfully')
@@ -53,12 +59,17 @@ export class AuthComponent implements OnInit {
         console.log("Please enter correct credentials")
       }
     });
+
+    this.signInForm.reset();
   }
 
   signUp() {
-    // Accept input from FORMS
+    this.signUpForm = this.formBuilder.group({
+      username: '',
+      password: ''
+    });
 
-    this.createPassword('nasrpi', 'password').subscribe((response) => {
+    this.createPassword(this.signUpForm.username, this.signUpForm.password).subscribe((response) => {
       if (response) {
         console.log('Password created successfully')
         this.router.navigateByUrl('/home')
