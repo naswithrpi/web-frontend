@@ -126,6 +126,7 @@ export class HomeComponent implements OnInit {
   onFileSelected(event) {
     console.log(event.target.files)
     this.selectedFile = <File>event.target.files[0]
+    this.onUpload()
   }
 
   onUpload() {
