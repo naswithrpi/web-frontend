@@ -31,6 +31,8 @@ export class HomeComponent implements OnInit {
       this.updateCurrentPath(response[0].filePath);
       this.home = this.currentPath;
     });
+
+    this.getSpaceUsage()
   }
 
   getContents(path) {
@@ -91,6 +93,9 @@ export class HomeComponent implements OnInit {
     this.getUsage = !this.getUsage;
     this.http.get('http://localhost:8080/getSpaceUsage').subscribe((response) => {
       this.space_usage_details = response;
+      //this.space_usage_details.totalSpace /= 1024;
+      //this.space_usage_details.usedSpace /= 1024;
+      //this.space_usage_details.freeSpace /= 1024;
       console.log(this.space_usage_details);
     })
   }
