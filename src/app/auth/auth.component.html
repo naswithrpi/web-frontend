@@ -26,66 +26,111 @@
             <path
                 d="M 20.99299430847168 23.06884574890137 L 32.18524169921875 11.8677864074707 C 33.01364517211914 11.03938293457031 34.35318756103516 11.03938293457031 35.17277908325195 11.8677864074707 C 35.99237060546875 12.69618797302246 35.99237060546875 14.03573226928711 35.17277908325195 14.8641357421875 L 22.49116897583008 27.5545597076416 C 21.68920707702637 28.35652160644531 20.40253639221191 28.37414932250977 19.57413482666016 27.61624908447266 L 6.804395198822021 14.87294769287109 C 6.390194416046143 14.4587459564209 6.1875 13.912353515625 6.1875 13.3747730255127 C 6.1875 12.83719253540039 6.390194416046143 12.29080009460449 6.804395198822021 11.8765983581543 C 7.632797718048096 11.04819679260254 8.972343444824219 11.04819679260254 9.791933059692383 11.8765983581543 L 20.99299430847168 23.06884574890137 Z" />
         </svg>
-        
-        <!-- Default form login -->
-            <form [formGroup]="signInForm" (ngSubmit)="signIn(signInForm.value)">
 
-                <p class="h4">Sign in</p>
-            
-                <!-- Username -->
-                <input type="text" formControlName="username" class="form-control mb-4" placeholder="Username">
-            
-                <!-- Password -->
-                <input type="password" formControlName="password" class="form-control mb-4" placeholder="Password">
-            
-                <!-- Sign in button --> 
-                <button mdbBtn block="true" class="my-4" type="submit">Sign in</button>
-            
-            </form>
-  <!-- Default form login -->
-        
         <div class="component81">
-            <div class="rectangle11"></div>
+            <div class="formRectangle"></div>
             <svg preserveAspectRatio="none" viewBox="0 0 440 74" class="path202">
                 <path
                     d="M 4.954955101013184 0 L 435.0450744628906 0 C 437.7815856933594 0 440 2.238576173782349 440 5 L 440 74 L 0 74 L 0 5 C 0 2.238576173782349 2.218408823013306 0 4.954955101013184 0 Z" />
             </svg>
-            <div class="signUp5e4610ff">Sign up</div>
-            <div class="group34">
-                <div class="buttone054a031" (click)="signUp(username, password)">
-                    <div class="rectangle15e039ec0e"></div>
-                    <div class="signUp">Sign up</div>
+
+
+            <div *ngIf="!formType" class="SignUpForm">
+                <div class="ctaButton">
+                    <div class="rectangle"></div>
+                    <button class="CTAButton" (click)="formType=!formType">Sign in</button>
                 </div>
-                <div class="textField71aa0bce"> <svg preserveAspectRatio="none" viewBox="-0.375 -0.375 302.75 0.75"
-                        class="path20339542bbc">
-                        <path d="M 0 0 L 302 0" /></svg>
-                    <input text="text" #username>
-                    <div class="eMail">Username</div>
-                </div>
-                <div class="textFieldafe22df2"> <svg preserveAspectRatio="none" viewBox="-0.375 -0.375 140.75 0.75"
-                        class="path20381a0098d">
-                        <path d="M 0 0 L 140 0" /></svg>
-                    <div class="firstName">First name</div>
-                </div>
-                <div class="textField1fa2e19d"> <svg preserveAspectRatio="none" viewBox="-0.375 -0.375 140.75 0.75"
-                        class="path203">
-                        <path d="M 0 0 L 140 0" /></svg>
-                    <div class="lastName">Last name</div>
-                </div>
-                <div class="textField"> <svg preserveAspectRatio="none" viewBox="-0.375 -0.375 302.75 0.75"
-                        class="path201">
-                        <path d="M 0 0 L 302 0" /></svg>
-                    <input text="text" #password>
-                    <div class="password">Password</div>
-                </div>
+
+                <div class="signUpHeader">Sign up</div>
+
+                <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+
+                    <div class="formButton">
+                        <div class="rectangle"></div>
+                        <button class="signUpButton" type="submit">Sign up</button>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="textFieldUsername"> <svg preserveAspectRatio="none"
+                                viewBox="-0.375 -0.375 302.75 0.75" class="path1">
+                                <path d="M 0 0 L 302 0" /></svg>
+                            <div class="md-form">
+                                <input type="text" id="username1" formControlName="username"
+                                    class="form-control mb-4 userInput" placeholder="Username">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="textFieldPassword"> <svg preserveAspectRatio="none"
+                                viewBox="-0.375 -0.375 302.75 0.75" class="path2">
+                                <path d="M 0 0 L 302 0" /></svg>
+                            <div class="md-form">
+                                <input type="text" id="password" formControlName="password"
+                                    class="form-control mb-4 passInput" placeholder="Password">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="textFieldConfirm"> <svg preserveAspectRatio="none"
+                                viewBox="-0.375 -0.375 302.75 0.75" class="path3">
+                                <path d="M 0 0 L 302 0" /></svg>
+                            <div class="md-form">
+                                <input type="password" id="confirmPassword" formControlName="confirmPassword"
+                                    class="form-control confirmPassInput" placeholder="Confirm Password">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
                 <div class="byClickingSignUpYouAgreeToOurTermsOfService">By clicking sign up, you agree to our terms of
                     service.</div>
             </div>
-            <div class="button" (click)="signIn()">
-                <div class="rectangle15"></div>
-                <div class="signIn">Sign in</div>
+
+
+            <div *ngIf="formType" class="SignInForm">
+
+                <div class="ctaButton">
+                    <div class="rectangle"></div>
+                    <button class="CTAButton" (click)="formType=!formType">Sign up</button>
+                </div>
+
+                <div class="signInHeader">Sign in</div>
+
+                <form [formGroup]="signInForm" (ngSubmit)="signIn()">
+
+                    <div class="formButton">
+                        <div class="rectangle"></div>
+                        <button class="signInButton" type="submit">Sign in</button>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="textFieldUsername"> <svg preserveAspectRatio="none"
+                                viewBox="-0.375 -0.375 302.75 0.75" class="path1">
+                                <path d="M 0 0 L 302 0" /></svg>
+                            <div class="md-form">
+                                <input type="text" id="signInUsername" formControlName="username"
+                                    class="form-control userInput" placeholder="Username">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="textFieldPassword"> <svg preserveAspectRatio="none"
+                                viewBox="-0.375 -0.375 302.75 0.75" class="path2">
+                                <path d="M 0 0 L 302 0" /></svg>
+                            <div class="md-form">
+                                <input type="password" id="signInPassword" formControlName="password"
+                                    class="form-control mb-4 passInput" placeholder="Password">
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
+
         <div class="infoText">
             <div class="transformYourHardDriveIntoCloudStorage">
                 Transform your hard drive into cloud storage</div>
@@ -113,6 +158,7 @@
                 <div class="x161779">161779</div>
             </div>
         </div>
+
         <div class="footer">
             <div class="rectangle19"></div>
             <div class="copyright">

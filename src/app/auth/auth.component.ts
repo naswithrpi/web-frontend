@@ -7,12 +7,21 @@ import { FormBuilder } from '@angular/forms';
   selector: 'app-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.css']
+
 })
 export class AuthComponent implements OnInit {
-signInForm;
-signUpForm;
+  signInForm = this.formBuilder.group({
+    'username': [''],
+    'password': ['']
+  })
+  signUpForm = this.formBuilder.group({
+    'username': [''],
+    'password': [''],
+    'confirmPassword': ['']
+  })
+  formType: boolean = false;
 
-  constructor(private http: HttpClient, private router: Router, private formBuilder : FormBuilder ) { }
+  constructor(private http: HttpClient, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
   }
@@ -39,15 +48,12 @@ signUpForm;
       'username': username,
       'password': password
     }
+    console.log('Credentials: ', credentials);
     const config = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
     return this.http.post('http://localhost:8080/createPassword', credentials, config);
   }
 
   signIn() {
-    this.signInForm = this.formBuilder.group({
-      username: '',
-      password: ''
-    });
 
     this.login(this.signInForm['username'], this.signInForm['password']).subscribe((response) => {
       console.log(response)
@@ -59,17 +65,12 @@ signUpForm;
         console.log("Please enter correct credentials")
       }
     });
-
     this.signInForm.reset();
   }
 
   signUp() {
-    this.signUpForm = this.formBuilder.group({
-      username: '',
-      password: ''
-    });
-
-    this.createPassword(this.signUpForm.username, this.signUpForm.password).subscribe((response) => {
+    console.log(this.signUpForm.value)
+    this.createPassword(this.signUpForm.value['username'], this.signUpForm.value['password']).subscribe((response) => {
       if (response) {
         console.log('Password created successfully')
         this.router.navigateByUrl('/home')
@@ -77,6 +78,7 @@ signUpForm;
         console.log('Error creating password')
       }
       console.log(response)
-    })
+    });
+    this.signUpForm.reset();
   }
 }
