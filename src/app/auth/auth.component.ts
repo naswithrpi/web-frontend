@@ -10,6 +10,9 @@ import { FormBuilder } from '@angular/forms';
 
 })
 export class AuthComponent implements OnInit {
+
+  IP_ADDRESS = '192.168.0.103:8080'
+
   signInForm = this.formBuilder.group({
     'username': [''],
     'password': ['']
@@ -27,7 +30,8 @@ export class AuthComponent implements OnInit {
   }
 
   isAuthenticated() {
-    let obs = this.http.get('http://localhost:8080/auth');
+    var ip = 'http://' + this.IP_ADDRESS + '/auth'
+    let obs = this.http.get(ip);
     obs.subscribe((response) => {
       console.log(response)
     })
@@ -40,7 +44,9 @@ export class AuthComponent implements OnInit {
     }
     const config = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
 
-    return this.http.post('http://localhost:8080/login', credentials, config);
+    var ip = 'http://' + this.IP_ADDRESS + '/login'
+
+    return this.http.post(ip, credentials, config);
   }
 
   createPassword(username: String, password: String) {
@@ -50,7 +56,9 @@ export class AuthComponent implements OnInit {
     }
     console.log('Credentials: ', credentials);
     const config = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
-    return this.http.post('http://localhost:8080/createPassword', credentials, config);
+    var ip = 'http://' + this.IP_ADDRESS + '/createPassword'
+
+    return this.http.post(ip, credentials, config);
   }
 
   signIn() {
