@@ -210,7 +210,7 @@ body {
 .driveAppLoginMint .component81 {
     display: block;
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     box-sizing: content-box;
     -ms-transform: rotate(0.00deg);
     -webkit-transform: rotate(0.00deg);
@@ -239,7 +239,7 @@ body {
 
 .driveAppLoginMint .component81 .formRectangle {
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     box-sizing: content-box;
     -ms-transform: rotate(0.00deg);
     -webkit-transform: rotate(0.00deg);
@@ -283,7 +283,7 @@ body {
 
 .driveAppLoginMint .component81 .path202 {
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     box-sizing: content-box;
     -ms-transform: rotate(0.00deg);
     -webkit-transform: rotate(0.00deg);
@@ -312,6 +312,7 @@ body {
 .driveAppLoginMint .component81 .SignUpForm {
     display: block;
     position: absolute;
+    z-index: -1;
     box-sizing: content-box;
     -ms-transform: rotate(0.00deg);
     -webkit-transform: rotate(0.00deg);
@@ -390,18 +391,6 @@ body {
     padding-left: 0.00px;
     border: 2px solid #4ECDC4;
     background-color: #292F36;
-    /* border-bottom-color: rgba(78, 205, 196, 1);
-    border-bottom-style: none;
-    border-bottom-width: 2.00px;
-    border-left-color: rgba(78, 205, 196, 1);
-    border-left-style: none;
-    border-left-width: 2.00px;
-    border-right-color: rgba(78, 205, 196, 1);
-    border-right-style: none;
-    border-right-width: 2.00px;
-    border-top-color: rgba(78, 205, 196, 1);
-    border-top-style: none;
-    border-top-width: 2.00px; */
     border-top-left-radius: 25.00px;
     border-top-right-radius: 25.00px;
     border-bottom-left-radius: 25.00px;
@@ -457,7 +446,7 @@ body {
 
 .driveAppLoginMint .component81 .SignUpForm .signUpHeader  {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     box-sizing: content-box;
     -ms-transform: rotate(0.00deg);
     -webkit-transform: rotate(0.00deg);
@@ -499,7 +488,7 @@ body {
 .driveAppLoginMint .component81 .SignUpForm .formButton {
     display: block;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     box-sizing: content-box;
     -ms-transform: rotate(0.00deg);
     -webkit-transform: rotate(0.00deg);
@@ -528,7 +517,7 @@ body {
 
 .driveAppLoginMint .component81 .SignUpForm .formButton .rectangle {
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     box-sizing: content-box;
     -ms-transform: rotate(0.00deg);
     -webkit-transform: rotate(0.00deg);
@@ -570,6 +559,51 @@ body {
     top: 0.00px;
 }
 
+.driveAppLoginMint .component81 .SignUpForm .formButton .rectangle:hover {
+    position: absolute;
+    z-index: -1;
+    box-sizing: content-box;
+    -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    opacity: 1;
+    cursor: default;
+    margin-top: 0.00px;
+    margin-right: 0.00px;
+    margin-bottom: 0.00px;
+    margin-left: 0.00px;
+    padding-top: 0.00px;
+    padding-right: 0.00px;
+    padding-bottom: 0.00px;
+    padding-left: 0.00px;
+    background-color: rgb(53, 163, 156);
+    border-bottom-color: rgba(78, 205, 196, 1);
+    border-bottom-style: none;
+    border-bottom-width: 2.00px;
+    border-left-color: rgba(78, 205, 196, 1);
+    border-left-style: none;
+    border-left-width: 2.00px;
+    border-right-color: rgba(78, 205, 196, 1);
+    border-right-style: none;
+    border-right-width: 2.00px;
+    border-top-color: rgba(78, 205, 196, 1);
+    border-top-style: none;
+    border-top-width: 2.00px;
+    border-top-left-radius: 25.00px;
+    border-top-right-radius: 25.00px;
+    border-bottom-left-radius: 25.00px;
+    border-bottom-right-radius: 25.00px;
+    box-shadow: none;
+    width: 180.00px;
+    height: 50.00px;
+    left: 0.00px;
+    top: 0.00px;
+}
+
+
 .driveAppLoginMint .component81 .SignUpForm .formButton .signUpButton {
     position: absolute;
     z-index: 2;
@@ -610,9 +644,12 @@ body {
     top: 13.00px;
 }
 
+
+
 .driveAppLoginMint .component81 .SignUpForm .textFieldUsername {
     display: block;
     position: absolute;
+    z-index: 3;
     box-sizing: content-box;
     -ms-transform: rotate(0.00deg);
     -webkit-transform: rotate(0.00deg);
@@ -641,6 +678,7 @@ body {
 
 .driveAppLoginMint .component81 .SignUpForm .textFieldUsername .path1 {
     position: absolute;
+    z-index: 2;
     box-sizing: content-box;
     -ms-transform: rotate(0.00deg);
     -webkit-transform: rotate(0.00deg);
@@ -689,7 +727,7 @@ body {
     padding-right: 0.00px;
     padding-bottom: 0.00px;
     padding-left: 0.00px;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: transparent;
     text-align: left;
     letter-spacing: 0.06px;
     color: rgba(243, 243, 243, 1);
@@ -703,11 +741,53 @@ body {
     overflow-x: unset;
     overflow-y: unset;
     white-space: pre;
-    width: 74.00px;
+    width: fit-content;
     height: 20.00px;
     left: 0.50px;
     top: 0.00px;
 }
+
+.driveAppLoginMint .component81 .SignUpForm .textFieldUsername .userInput::selection {
+    position: absolute;
+    z-index: 3;
+    visibility: hidden;
+    box-sizing: content-box;
+    -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    opacity: 1;
+    cursor: default;
+    margin-top: 0.00px;
+    margin-right: 0.00px;
+    margin-bottom: 0.00px;
+    margin-left: 0.00px;
+    padding-top: 0.00px;
+    padding-right: 0.00px;
+    padding-bottom: 0.00px;
+    padding-left: 0.00px;
+    background-color: transparent;
+    text-align: left;
+    letter-spacing: 0.06px;
+    color: rgba(243, 243, 243, 1);
+    -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0);
+    font-size: 14.00px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: Poppins, Arial;
+    text-decoration: none;
+    box-shadow: none;
+    overflow-x: unset;
+    overflow-y: unset;
+    white-space: pre;
+    width: fit-content;
+    height: 20.00px;
+    left: 0.50px;
+    top: 0.00px;
+}
+
 
 .driveAppLoginMint .component81 .SignUpForm .textFieldPassword {
     display: block;
@@ -778,7 +858,7 @@ body {
     -ms-transform-origin: center;
     -webkit-transform-origin: center;
     transform-origin: center;
-    opacity: 0;
+    opacity: 1;
     cursor: default;
     margin-top: 0.00px;
     margin-right: 0.00px;
@@ -802,12 +882,52 @@ body {
     overflow-x: unset;
     overflow-y: unset;
     white-space: pre;
-    width: 100%;
+    width: fit-content;
     height: 20.00px;
     left: 0.50px;
     top: 0.00px;
 }
 
+.driveAppLoginMint .component81 .SignUpForm .textFieldPassword .passInput::selection {
+    position: absolute;
+    z-index: 3;
+    visibility: hidden;
+    box-sizing: content-box;
+    -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    opacity: 1;
+    cursor: default;
+    margin-top: 0.00px;
+    margin-right: 0.00px;
+    margin-bottom: 0.00px;
+    margin-left: 0.00px;
+    padding-top: 0.00px;
+    padding-right: 0.00px;
+    padding-bottom: 0.00px;
+    padding-left: 0.00px;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: left;
+    letter-spacing: 0.06px;
+    color: rgba(243, 243, 243, 1);
+    -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0);
+    font-size: 14.00px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: Poppins, Arial;
+    text-decoration: none;
+    box-shadow: none;
+    overflow-x: unset;
+    overflow-y: unset;
+    white-space: pre;
+    width: fit-content;
+    height: 20.00px;
+    left: 0.50px;
+    top: 0.00px;
+}
 
 .driveAppLoginMint .component81 .SignUpForm .textFieldConfirm {
     display: block;
@@ -878,7 +998,7 @@ body {
     -ms-transform-origin: center;
     -webkit-transform-origin: center;
     transform-origin: center;
-    opacity: 0;
+    opacity: 1;
     cursor: default;
     margin-top: 0.00px;
     margin-right: 0.00px;
@@ -892,7 +1012,7 @@ body {
     text-align: left;
     letter-spacing: 0.06px;
     color: rgba(243, 243, 243, 1);
-    -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0);
+    /* -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0); */
     font-size: 14.00px;
     font-weight: 400;
     font-style: normal;
@@ -902,7 +1022,50 @@ body {
     overflow-x: unset;
     overflow-y: unset;
     white-space: pre;
-    width: 74.00px;
+    touch-action: unset;
+    width: fit-content;
+    height: 20.00px;
+    left: 0.50px;
+    top: 0.00px;
+}
+
+.driveAppLoginMint .component81 .SignUpForm .textFieldConfirm .confirmPassInput::selection {
+    position: absolute;
+    z-index: 3;
+    visibility: hidden;
+    box-sizing: content-box;
+    -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    opacity: 1;
+    cursor: default;
+    margin-top: 0.00px;
+    margin-right: 0.00px;
+    margin-bottom: 0.00px;
+    margin-left: 0.00px;
+    padding-top: 0.00px;
+    padding-right: 0.00px;
+    padding-bottom: 0.00px;
+    padding-left: 0.00px;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: left;
+    letter-spacing: 0.06px;
+    color: rgba(243, 243, 243, 1);
+    /* -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0); */
+    font-size: 14.00px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: Poppins, Arial;
+    text-decoration: none;
+    box-shadow: none;
+    overflow-x: unset;
+    overflow-y: unset;
+    white-space: pre;
+    touch-action: unset;
+    width: fit-content;
     height: 20.00px;
     left: 0.50px;
     top: 0.00px;
@@ -1029,18 +1192,6 @@ body {
     padding-left: 0.00px;
     border: 2px solid #4ECDC4;
     background-color: #292F36;
-    /* border-bottom-color: rgba(78, 205, 196, 1);
-    border-bottom-style: none;
-    border-bottom-width: 2.00px;
-    border-left-color: rgba(78, 205, 196, 1);
-    border-left-style: none;
-    border-left-width: 2.00px;
-    border-right-color: rgba(78, 205, 196, 1);
-    border-right-style: none;
-    border-right-width: 2.00px;
-    border-top-color: rgba(78, 205, 196, 1);
-    border-top-style: none;
-    border-top-width: 2.00px; */
     border-top-left-radius: 25.00px;
     border-top-right-radius: 25.00px;
     border-bottom-left-radius: 25.00px;
@@ -1209,6 +1360,50 @@ body {
     top: 0.00px;
 }
 
+.driveAppLoginMint .component81 .SignInForm .formButton .rectangle:hover {
+    position: absolute;
+    z-index: 1;
+    box-sizing: content-box;
+    -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    opacity: 1;
+    cursor: default;
+    margin-top: 0.00px;
+    margin-right: 0.00px;
+    margin-bottom: 0.00px;
+    margin-left: 0.00px;
+    padding-top: 0.00px;
+    padding-right: 0.00px;
+    padding-bottom: 0.00px;
+    padding-left: 0.00px;
+    background-color: rgb(53, 163, 156);
+    border-bottom-color: rgba(78, 205, 196, 1);
+    border-bottom-style: none;
+    border-bottom-width: 2.00px;
+    border-left-color: rgba(78, 205, 196, 1);
+    border-left-style: none;
+    border-left-width: 2.00px;
+    border-right-color: rgba(78, 205, 196, 1);
+    border-right-style: none;
+    border-right-width: 2.00px;
+    border-top-color: rgba(78, 205, 196, 1);
+    border-top-style: none;
+    border-top-width: 2.00px;
+    border-top-left-radius: 25.00px;
+    border-top-right-radius: 25.00px;
+    border-bottom-left-radius: 25.00px;
+    border-bottom-right-radius: 25.00px;
+    box-shadow: none;
+    width: 180.00px;
+    height: 50.00px;
+    left: 0.00px;
+    top: 0.00px;
+}
+
 .driveAppLoginMint .component81 .SignInForm .formButton .signInButton {
     position: absolute;
     z-index: 2;
@@ -1318,8 +1513,8 @@ body {
     -ms-transform-origin: center;
     -webkit-transform-origin: center;
     transform-origin: center;
-    opacity: 0;
-    cursor: default;
+    opacity: 1;
+    cursor: text;
     margin-top: 0.00px;
     margin-right: 0.00px;
     margin-bottom: 0.00px;
@@ -1342,7 +1537,48 @@ body {
     overflow-x: unset;
     overflow-y: unset;
     white-space: pre;
-    width: 74.00px;
+    width: fit-content;
+    height: 20.00px;
+    left: 0.50px;
+    top: 0.00px;
+}
+
+.driveAppLoginMint .component81 .SignInForm .textFieldUsername .userInput::selection {
+    position: absolute;
+    z-index: 3;
+    visibility: hidden;
+    box-sizing: content-box;
+    -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    opacity: 1;
+    cursor: text;
+    margin-top: 0.00px;
+    margin-right: 0.00px;
+    margin-bottom: 0.00px;
+    margin-left: 0.00px;
+    padding-top: 0.00px;
+    padding-right: 0.00px;
+    padding-bottom: 0.00px;
+    padding-left: 0.00px;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: left;
+    letter-spacing: 0.06px;
+    color: rgba(243, 243, 243, 1);
+    -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0);
+    font-size: 14.00px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: Poppins, Arial;
+    text-decoration: none;
+    box-shadow: none;
+    overflow-x: unset;
+    overflow-y: unset;
+    white-space: pre;
+    width: fit-content;
     height: 20.00px;
     left: 0.50px;
     top: 0.00px;
@@ -1417,8 +1653,8 @@ body {
     -ms-transform-origin: center;
     -webkit-transform-origin: center;
     transform-origin: center;
-    opacity: 0;
-    cursor: default;
+    opacity: 1;
+    cursor: text;
     margin-top: 0.00px;
     margin-right: 0.00px;
     margin-bottom: 0.00px;
@@ -1441,7 +1677,48 @@ body {
     overflow-x: unset;
     overflow-y: unset;
     white-space: pre;
-    width: 100%;
+    width: fit-content;
+    height: 20.00px;
+    left: 0.50px;
+    top: 0.00px;
+}
+
+.driveAppLoginMint .component81 .SignInForm .textFieldPassword .passInput::selection{
+    position: absolute;
+    z-index: 3;
+    box-sizing: content-box;
+    visibility: hidden;
+    -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    opacity: 1;
+    cursor: text;
+    margin-top: 0.00px;
+    margin-right: 0.00px;
+    margin-bottom: 0.00px;
+    margin-left: 0.00px;
+    padding-top: 0.00px;
+    padding-right: 0.00px;
+    padding-bottom: 0.00px;
+    padding-left: 0.00px;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: left;
+    letter-spacing: 0.06px;
+    color: rgba(243, 243, 243, 1);
+    -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0);
+    font-size: 14.00px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: Poppins, Arial;
+    text-decoration: none;
+    box-shadow: none;
+    overflow-x: unset;
+    overflow-y: unset;
+    white-space: pre;
+    width: fit-content;
     height: 20.00px;
     left: 0.50px;
     top: 0.00px;

@@ -27,48 +27,6 @@
                 d="M 20.99299430847168 23.06884574890137 L 32.18524169921875 11.8677864074707 C 33.01364517211914 11.03938293457031 34.35318756103516 11.03938293457031 35.17277908325195 11.8677864074707 C 35.99237060546875 12.69618797302246 35.99237060546875 14.03573226928711 35.17277908325195 14.8641357421875 L 22.49116897583008 27.5545597076416 C 21.68920707702637 28.35652160644531 20.40253639221191 28.37414932250977 19.57413482666016 27.61624908447266 L 6.804395198822021 14.87294769287109 C 6.390194416046143 14.4587459564209 6.1875 13.912353515625 6.1875 13.3747730255127 C 6.1875 12.83719253540039 6.390194416046143 12.29080009460449 6.804395198822021 11.8765983581543 C 7.632797718048096 11.04819679260254 8.972343444824219 11.04819679260254 9.791933059692383 11.8765983581543 L 20.99299430847168 23.06884574890137 Z" />
         </svg>
 
-        <!-- <div class="SignIn/SignUpForm">
-            
-            <div class="rectangle15"></div>
-            <div *ngIf="formType" class="sign in form">
-                    <button class="CTAbutton" (click)="formType=!formType">Sign up</button>
-                    <form [formGroup] ="signInForm" (ngSubmit)="signIn()">
-                            {{signInForm.value | json}}
-                        
-                            <p class="h4">Sign in</p>
-                        
-                            <div class="form-group">
-                                <input type="text" formControlName="username" class="form-control mb-4" placeholder="Username"> 
-                            </div>
-                        
-                            <div class="form-group">
-                                <input type="password" formControlName="password" class="form-control mb-4" placeholder="Password">
-                            </div>
-
-                            <button class="btn btn-primary" type="submit">Sign in</button>
-                    </form>
-            </div>
-        
-            <div *ngIf="!formType" class="sign up form">
-                    <button class="CTAbutton" (click)="formType=!formType">Sign in</button>
-                    <form [formGroup] ="signUpForm" (ngSubmit)="signUp()">
-
-                            <p class="h4">Sign up</p>
-
-                        <div class ="form-group">
-                            <input type="text" formControlName="username" class="form-control mb-4" placeholder="Username">
-                        </div>
-                        <div class ="form-group">
-                            <input type="password" formControlName="password" class="form-control mb-4" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                                <input type="password" formControlName="confirmPassword" class="form-control mb-4" placeholder="Confirm password">
-                        </div>
-                            <button class="btn btn-primary" type="submit">Sign up</button>
-                    </form>
-            </div>
-        </div> -->
-        
         <div class="component81">
             <div class="formRectangle"></div>
             <svg preserveAspectRatio="none" viewBox="0 0 440 74" class="path202">
@@ -98,10 +56,8 @@
                             <div class="textFieldUsername"> <svg preserveAspectRatio="none" viewBox="-0.375 -0.375 302.75 0.75"
                                 class="path1">
                             <path d="M 0 0 L 302 0" /></svg>
-                            <!-- <div class="usn">Username</div> -->
                             <div class="md-form">
-                                <input type="text" id="username" formControlName="username" class="form-control mb-4 userInput">
-                                <label for="username" style="color: #f3f3f3; opacity: 0.5">Username</label>
+                                <input type="text" id="username1" formControlName="username" class="form-control mb-4 userInput" placeholder="Username">
                             </div>
                         </div>
                     </div>
@@ -110,10 +66,8 @@
                             <div class="textFieldPassword"> <svg preserveAspectRatio="none" viewBox="-0.375 -0.375 302.75 0.75"
                                     class="path2">
                             <path d="M 0 0 L 302 0" /></svg>       
-                            <!-- <div class="pass">Password</div> -->
                             <div class = "md-form">
-                                <input type="text" id="password" formControlName="password" class="form-control mb-4 passInput">
-                                <label for="password" style="color: #f3f3f3; opacity: 0.5">Password</label>
+                                <input type="text" id="password" formControlName="password" class="form-control mb-4 passInput" placeholder="Password">
                             </div>
                         </div>
                     </div>
@@ -123,10 +77,8 @@
                             <div class="textFieldConfirm"> <svg preserveAspectRatio="none" viewBox="-0.375 -0.375 302.75 0.75"
                                     class="path3">
                             <path d="M 0 0 L 302 0" /></svg>
-                            <!-- <div class="cpass">Confirm Password</div> -->
                             <div class = "md-form">
-                                    <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control mb-4 confirmPassInput">
-                                    <label for="confirmPassword" style="color: #f3f3f3; opacity: 0.5"> Confirm Password</label>
+                                    <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control confirmPassInput" placeholder="Confirm Password">
                             </div>
                         </div>
                     </div>
@@ -158,8 +110,7 @@
                                         class="path1">
                                     <path d="M 0 0 L 302 0" /></svg>
                                     <div class="md-form">
-                                        <input type="text" id="signInUsername" formControlName="username" class="form-control userInput">
-                                        <label for="signInUsername" style="color: #f3f3f3; opacity: 0.5">Username</label>
+                                        <input type="text" id="signInUsername" formControlName="username" class="form-control userInput" placeholder="Username">
                                     </div>
                                 </div>
                             </div>
@@ -169,17 +120,12 @@
                                             class="path2">
                                     <path d="M 0 0 L 302 0" /></svg>       
                                     <div class = "md-form">
-                                        <input type="password" id="signInPassword" formControlName="password" class="form-control mb-4 passInput">
-                                        <label for="signInPassword" style="color: #f3f3f3; opacity: 0.5">Password</label>
+                                        <input type="password" id="signInPassword" formControlName="password" class="form-control mb-4 passInput" placeholder="Password">
                                     </div>
                                 </div>
                             </div>
                         </form>
                 </div>
-
-
-
-
         </div>
 
         <div class="infoText">

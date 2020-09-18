@@ -11,15 +11,15 @@ import { FormBuilder } from '@angular/forms';
 })
 export class AuthComponent implements OnInit {
 signInForm = this.formBuilder.group({
-  username: [''],
-  password: ['']
+  'username': [''],
+  'password': ['']
 })
 signUpForm = this.formBuilder.group({
-  username: [''],
-  password: [''],
-  confirmPassword: ['']
+  'username': [''],
+  'password': [''],
+  'confirmPassword': ['']
 })
-logIn: boolean = false;
+formType: boolean = false;
 
   constructor(private http: HttpClient, private router: Router, private formBuilder : FormBuilder ) { }
 
