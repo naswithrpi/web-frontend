@@ -10,8 +10,15 @@ import { FormBuilder } from '@angular/forms';
 
 })
 export class AuthComponent implements OnInit {
-signInForm;
-signUpForm;
+signInForm = this.formBuilder.group({
+  username: [''],
+  password: ['']
+})
+signUpForm = this.formBuilder.group({
+  username: [''],
+  password: [''],
+  confirmPassword: ['']
+})
 logIn: boolean = false;
 
   constructor(private http: HttpClient, private router: Router, private formBuilder : FormBuilder ) { }
@@ -46,10 +53,7 @@ logIn: boolean = false;
   }
 
   signIn() {
-    this.signInForm = this.formBuilder.group({
-      username: '',
-      password: ''
-    });
+
     this.login(this.signInForm['username'], this.signInForm['password']).subscribe((response) => {
       console.log(response)
       if (response) {
@@ -64,12 +68,8 @@ logIn: boolean = false;
   }
 
   signUp() {
-    this.signUpForm = this.formBuilder.group({
-      firstname: '',
-      lastname: '',
-      username: '',
-      password: ''
-    });
+   
+   console.log(this.signUpForm.value)
     this.createPassword(this.signUpForm['username'], this.signUpForm['password']).subscribe((response) => {
       if (response) {
         console.log('Password created successfully')
