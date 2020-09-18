@@ -7,10 +7,12 @@ import { FormBuilder } from '@angular/forms';
   selector: 'app-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.css']
+
 })
 export class AuthComponent implements OnInit {
 signInForm;
 signUpForm;
+logIn: boolean = false;
 
   constructor(private http: HttpClient, private router: Router, private formBuilder : FormBuilder ) { }
 
@@ -48,7 +50,6 @@ signUpForm;
       username: '',
       password: ''
     });
-
     this.login(this.signInForm['username'], this.signInForm['password']).subscribe((response) => {
       console.log(response)
       if (response) {
@@ -59,17 +60,17 @@ signUpForm;
         console.log("Please enter correct credentials")
       }
     });
-
     this.signInForm.reset();
   }
 
   signUp() {
     this.signUpForm = this.formBuilder.group({
+      firstname: '',
+      lastname: '',
       username: '',
       password: ''
     });
-
-    this.createPassword(this.signUpForm.username, this.signUpForm.password).subscribe((response) => {
+    this.createPassword(this.signUpForm['username'], this.signUpForm['password']).subscribe((response) => {
       if (response) {
         console.log('Password created successfully')
         this.router.navigateByUrl('/home')
@@ -77,6 +78,7 @@ signUpForm;
         console.log('Error creating password')
       }
       console.log(response)
-    })
+    });
+    this.signUpForm.reset();
   }
 }
