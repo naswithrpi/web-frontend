@@ -54,8 +54,7 @@ export class AuthComponent implements OnInit {
   }
 
   signIn() {
-
-    this.login(this.signInForm['username'], this.signInForm['password']).subscribe((response) => {
+    this.login(this.signInForm.value['username'], this.signInForm.value['password']).subscribe((response) => {
       console.log(response)
       if (response) {
         console.log('User logged in successfully')
