@@ -5,7 +5,7 @@
 </head>
 
 <body>
-     <div class="driveAppLoginMint"> <svg preserveAspectRatio="none" viewBox="0 0 1366 1536" class="path200">
+    <div class="driveAppLoginMint"> <svg preserveAspectRatio="none" viewBox="0 0 1366 1536" class="path200">
             <defs>
                 <pattern id="img-path200" patternContentUnits="userSpaceOnUse" width="100%" height="100%">
                     <image xlink:href="../../assets/images/path200.png" x="0" y="0" width="1366.00px"
@@ -33,52 +33,53 @@
                 <path
                     d="M 4.954955101013184 0 L 435.0450744628906 0 C 437.7815856933594 0 440 2.238576173782349 440 5 L 440 74 L 0 74 L 0 5 C 0 2.238576173782349 2.218408823013306 0 4.954955101013184 0 Z" />
             </svg>
-            
-            
+
+
             <div *ngIf="!formType" class="SignUpForm">
-                
-                
                 <div class="ctaButton">
                     <div class="rectangle"></div>
                     <button class="CTAButton" (click)="formType=!formType">Sign in</button>
                 </div>
-        
+
                 <div class="signUpHeader">Sign up</div>
 
-                <form [formGroup] ="signUpForm" (ngSubmit)="signUp()">
-                
+                <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+
                     <div class="formButton">
                         <div class="rectangle"></div>
                         <button class="signUpButton" type="submit">Sign up</button>
                     </div>
-                    
-                        <div class ="form-group">
-                            <div class="textFieldUsername"> <svg preserveAspectRatio="none" viewBox="-0.375 -0.375 302.75 0.75"
-                                class="path1">
-                            <path d="M 0 0 L 302 0" /></svg>
-                            <div class="md-form">
-                                <input type="text" id="username1" formControlName="username" class="form-control mb-4 userInput" placeholder="Username">
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class ="form-group">    
-                            <div class="textFieldPassword"> <svg preserveAspectRatio="none" viewBox="-0.375 -0.375 302.75 0.75"
-                                    class="path2">
-                            <path d="M 0 0 L 302 0" /></svg>       
-                            <div class = "md-form">
-                                <input type="text" id="password" formControlName="password" class="form-control mb-4 passInput" placeholder="Password">
-                            </div>
-                        </div>
-                    </div>
-
-                    
                     <div class="form-group">
-                            <div class="textFieldConfirm"> <svg preserveAspectRatio="none" viewBox="-0.375 -0.375 302.75 0.75"
-                                    class="path3">
-                            <path d="M 0 0 L 302 0" /></svg>
-                            <div class = "md-form">
-                                    <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control confirmPassInput" placeholder="Confirm Password">
+                        <div class="textFieldUsername"> <svg preserveAspectRatio="none"
+                                viewBox="-0.375 -0.375 302.75 0.75" class="path1">
+                                <path d="M 0 0 L 302 0" /></svg>
+                            <div class="md-form">
+                                <input type="text" id="username1" formControlName="username"
+                                    class="form-control mb-4 userInput" placeholder="Username">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="textFieldPassword"> <svg preserveAspectRatio="none"
+                                viewBox="-0.375 -0.375 302.75 0.75" class="path2">
+                                <path d="M 0 0 L 302 0" /></svg>
+                            <div class="md-form">
+                                <input type="text" id="password" formControlName="password"
+                                    class="form-control mb-4 passInput" placeholder="Password">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="textFieldConfirm"> <svg preserveAspectRatio="none"
+                                viewBox="-0.375 -0.375 302.75 0.75" class="path3">
+                                <path d="M 0 0 L 302 0" /></svg>
+                            <div class="md-form">
+                                <input type="password" id="confirmPassword" formControlName="confirmPassword"
+                                    class="form-control confirmPassInput" placeholder="Confirm Password">
                             </div>
                         </div>
                     </div>
@@ -90,42 +91,44 @@
 
 
             <div *ngIf="formType" class="SignInForm">
-                
-                    <div class="ctaButton">
-                            <div class="rectangle"></div>
-                            <button class="CTAButton" (click)="formType=!formType">Sign up</button>
-                        </div>
-                
-                        <div class="signInHeader">Sign in</div>
-        
-                        <form [formGroup] ="signInForm" (ngSubmit)="signIn()">
-                        
-                            <div class="formButton">
-                                <div class="rectangle"></div>
-                                <button class="signInButton" type="submit">Sign in</button>
-                            </div>
-                            
-                                <div class ="form-group">
-                                    <div class="textFieldUsername"> <svg preserveAspectRatio="none" viewBox="-0.375 -0.375 302.75 0.75"
-                                        class="path1">
-                                    <path d="M 0 0 L 302 0" /></svg>
-                                    <div class="md-form">
-                                        <input type="text" id="signInUsername" formControlName="username" class="form-control userInput" placeholder="Username">
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <div class ="form-group">    
-                                    <div class="textFieldPassword"> <svg preserveAspectRatio="none" viewBox="-0.375 -0.375 302.75 0.75"
-                                            class="path2">
-                                    <path d="M 0 0 L 302 0" /></svg>       
-                                    <div class = "md-form">
-                                        <input type="password" id="signInPassword" formControlName="password" class="form-control mb-4 passInput" placeholder="Password">
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+
+                <div class="ctaButton">
+                    <div class="rectangle"></div>
+                    <button class="CTAButton" (click)="formType=!formType">Sign up</button>
                 </div>
+
+                <div class="signInHeader">Sign in</div>
+
+                <form [formGroup]="signInForm" (ngSubmit)="signIn()">
+
+                    <div class="formButton">
+                        <div class="rectangle"></div>
+                        <button class="signInButton" type="submit">Sign in</button>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="textFieldUsername"> <svg preserveAspectRatio="none"
+                                viewBox="-0.375 -0.375 302.75 0.75" class="path1">
+                                <path d="M 0 0 L 302 0" /></svg>
+                            <div class="md-form">
+                                <input type="text" id="signInUsername" formControlName="username"
+                                    class="form-control userInput" placeholder="Username">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="textFieldPassword"> <svg preserveAspectRatio="none"
+                                viewBox="-0.375 -0.375 302.75 0.75" class="path2">
+                                <path d="M 0 0 L 302 0" /></svg>
+                            <div class="md-form">
+                                <input type="password" id="signInPassword" formControlName="password"
+                                    class="form-control mb-4 passInput" placeholder="Password">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
 
         <div class="infoText">

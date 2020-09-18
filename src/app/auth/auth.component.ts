@@ -10,18 +10,18 @@ import { FormBuilder } from '@angular/forms';
 
 })
 export class AuthComponent implements OnInit {
-signInForm = this.formBuilder.group({
-  'username': [''],
-  'password': ['']
-})
-signUpForm = this.formBuilder.group({
-  'username': [''],
-  'password': [''],
-  'confirmPassword': ['']
-})
-formType: boolean = false;
+  signInForm = this.formBuilder.group({
+    'username': [''],
+    'password': ['']
+  })
+  signUpForm = this.formBuilder.group({
+    'username': [''],
+    'password': [''],
+    'confirmPassword': ['']
+  })
+  formType: boolean = false;
 
-  constructor(private http: HttpClient, private router: Router, private formBuilder : FormBuilder ) { }
+  constructor(private http: HttpClient, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
   }
@@ -48,6 +48,7 @@ formType: boolean = false;
       'username': username,
       'password': password
     }
+    console.log('Credentials: ', credentials);
     const config = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
     return this.http.post('http://localhost:8080/createPassword', credentials, config);
   }
@@ -68,9 +69,8 @@ formType: boolean = false;
   }
 
   signUp() {
-   
-   console.log(this.signUpForm.value)
-    this.createPassword(this.signUpForm['username'], this.signUpForm['password']).subscribe((response) => {
+    console.log(this.signUpForm.value)
+    this.createPassword(this.signUpForm.value['username'], this.signUpForm.value['password']).subscribe((response) => {
       if (response) {
         console.log('Password created successfully')
         this.router.navigateByUrl('/home')
