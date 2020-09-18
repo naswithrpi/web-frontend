@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
         this.updateCurrentPath(response[0].filePath);
       } else {
         console.log(path);
-        this.updateCurrentPath(path);
+        this.updateCurrentPath(path + "/");
       }
     })
   }
@@ -66,27 +66,32 @@ export class HomeComponent implements OnInit {
   getBackPath() {
     if (this.currentPath != this.home) {
       let back = "";
-      let pathArray = this.currentPath.split('\\');
+      let pathArray = this.currentPath.split('/');
       console.log('Path array:', pathArray)
       for (let i = 0; i < pathArray.length - 2; i++) {
         console.log(pathArray[i]);
-        back += pathArray[i] + "\\";
+        back += pathArray[i] + "/";
       }
       console.log("back ", back);
       this.getContents(back);
     } else {
       console.log('Already on home')
     }
-
   }
 
   updateCurrentPath(path) {
     this.currentPath = '';
+    console.log('Updating current path: ', path)
     let pathArray = path.split('/');
     for (let i = 0; i < pathArray.length - 1; i++) {
       this.currentPath += pathArray[i] + "/";
     }
     console.log("current ", this.currentPath);
+
+    if (this.currentPath[this.currentPath.length - 1] != '/') {
+      // Append / to currentPath
+      this.currentPath += '/';
+    }
   }
 
   refresh() {
