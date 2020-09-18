@@ -69,6 +69,7 @@ export class AuthComponent implements OnInit {
         this.router.navigateByUrl('/home')
       }
       else {
+        alert("Please enter correct credentials")
         console.log("Please enter correct credentials")
       }
     });
