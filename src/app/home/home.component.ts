@@ -153,7 +153,7 @@ export class HomeComponent implements OnInit {
 
       var ip = 'http://' + this.IP_ADDRESS + '/uploadFile'
       this.http.post(ip, fileUpload).subscribe((response) => {
-        console.log(response);
+        console.log('Upload response', response);
         this.refresh()
       });
     } else {
