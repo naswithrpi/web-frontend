@@ -9,6 +9,9 @@ import { ResponseModel } from './response';
 })
 export class HomeComponent implements OnInit {
 
+  // Enter IP:PORT
+  IP_ADDRESS = '192.168.0.103:8080'
+
   response_html: Array<ResponseModel> = [];
   home: String;
   currentPath: string = '';
@@ -22,21 +25,25 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    let obs = this.http.get('http://localhost:8080/getAllRootItems');
+    var ip = 'http://' + this.IP_ADDRESS + '/getAllRootItems'
+    let obs = this.http.get(ip);
     obs.subscribe((response) => {
+      console.log(response)
       for (let responseObject in response) {
         this.response_html.push(response[responseObject]);
         // console.log(this.response_html[responseObject].filePath)
       }
       this.updateCurrentPath(response[0].filePath);
       this.home = this.currentPath;
+      console.log('home', this.home)
     });
 
     this.getSpaceUsage()
   }
 
   getContents(path) {
-    this.http.post('http://localhost:8080/getContents', path).subscribe((response) => {
+    var ip = 'http://' + this.IP_ADDRESS + '/getContents'
+    this.http.post(ip, path).subscribe((response) => {
       this.response_html = [];
       for (let responseObject in response) {
         this.response_html.push(response[responseObject]);
@@ -82,7 +89,8 @@ export class HomeComponent implements OnInit {
   }
 
   delete(path) {
-    this.http.post('http://localhost:8080/delete', path).subscribe((response) => {
+    var ip = 'http://' + this.IP_ADDRESS + '/delete'
+    this.http.post(ip, path).subscribe((response) => {
       this.refresh();
       console.log(response);
     })
@@ -91,11 +99,9 @@ export class HomeComponent implements OnInit {
 
   getSpaceUsage() {
     this.getUsage = !this.getUsage;
-    this.http.get('http://localhost:8080/getSpaceUsage').subscribe((response) => {
+    var ip = 'http://' + this.IP_ADDRESS + '/getSpaceUsage'
+    this.http.get(ip).subscribe((response) => {
       this.space_usage_details = response;
-      //this.space_usage_details.totalSpace /= 1024;
-      //this.space_usage_details.usedSpace /= 1024;
-      //this.space_usage_details.freeSpace /= 1024;
       console.log(this.space_usage_details);
     })
   }
@@ -109,7 +115,8 @@ export class HomeComponent implements OnInit {
     path = path.split('\\').join('\\\\');
     path = path.concat(this.dir_name);
     console.log('create: ', path);
-    this.http.post('http://localhost:8080/createDirectory', path).subscribe((response) => {
+    var ip = 'http://' + this.IP_ADDRESS + '/createDirectory'
+    this.http.post(ip, path).subscribe((response) => {
       console.log(response);
     })
     this.refresh();
@@ -124,7 +131,8 @@ export class HomeComponent implements OnInit {
       'searchKey': this.search_key
     }
     console.log(search_obj);
-    this.http.post('http://localhost:8080/search', search_obj).subscribe((response) => {
+    var ip = 'http://' + this.IP_ADDRESS + '/search'
+    this.http.post(ip, search_obj).subscribe((response) => {
       console.log(response);
     });
   }
@@ -143,7 +151,8 @@ export class HomeComponent implements OnInit {
       fileUpload.append('file', this.selectedFile);
       fileUpload.append('path', this.currentPath);
 
-      this.http.post('http://localhost:8080/uploadFile', fileUpload).subscribe((response) => {
+      var ip = 'http://' + this.IP_ADDRESS + '/uploadFile'
+      this.http.post(ip, fileUpload).subscribe((response) => {
         console.log(response);
         this.refresh()
       });
@@ -157,7 +166,8 @@ export class HomeComponent implements OnInit {
       'source': source,
       'destination': destination
     }
-    this.http.post('http://localhost:8080/moveFile', obj, {
+    var ip = 'http://' + this.IP_ADDRESS + '/moveFile'
+    this.http.post(ip, obj, {
       headers: {
         'content-type': 'application/json'
       }
@@ -172,7 +182,8 @@ export class HomeComponent implements OnInit {
       'source': source,
       'destination': destination
     }
-    this.http.post('http://localhost:8080/moveFolder', obj).subscribe((response) => {
+    var ip = 'http://' + this.IP_ADDRESS + '/moveFolder'
+    this.http.post(ip, obj).subscribe((response) => {
       console.log(response)
       this.refresh()
     })
