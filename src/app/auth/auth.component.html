@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <div class="driveAppLoginMint"> <svg preserveAspectRatio="none" viewBox="0 0 1366 1536" class="path200">
+     <div class="driveAppLoginMint"> <svg preserveAspectRatio="none" viewBox="0 0 1366 1536" class="path200">
             <defs>
                 <pattern id="img-path200" patternContentUnits="userSpaceOnUse" width="100%" height="100%">
                     <image xlink:href="../../assets/images/path200.png" x="0" y="0" width="1366.00px"
@@ -27,13 +27,13 @@
                 d="M 20.99299430847168 23.06884574890137 L 32.18524169921875 11.8677864074707 C 33.01364517211914 11.03938293457031 34.35318756103516 11.03938293457031 35.17277908325195 11.8677864074707 C 35.99237060546875 12.69618797302246 35.99237060546875 14.03573226928711 35.17277908325195 14.8641357421875 L 22.49116897583008 27.5545597076416 C 21.68920707702637 28.35652160644531 20.40253639221191 28.37414932250977 19.57413482666016 27.61624908447266 L 6.804395198822021 14.87294769287109 C 6.390194416046143 14.4587459564209 6.1875 13.912353515625 6.1875 13.3747730255127 C 6.1875 12.83719253540039 6.390194416046143 12.29080009460449 6.804395198822021 11.8765983581543 C 7.632797718048096 11.04819679260254 8.972343444824219 11.04819679260254 9.791933059692383 11.8765983581543 L 20.99299430847168 23.06884574890137 Z" />
         </svg>
 
-        <div class="button" (click)="logIn=!logIn">
+        <div class="SignIn/SignUpForm">
+            
             <div class="rectangle15"></div>
-            <div *ngIf="logIn">
-                <div class="signIn">Sign in</div>
+            <div *ngIf="formType">
+                    <button class="CTAbutton" (click)="formType=!formType">Sign up</button>
                     <form [formGroup] ="signInForm" (ngSubmit)="signIn()">
-
-                            {{signInForm.value | json}}
+                            <!-- {{signInForm.value | json}} -->
                         
                             <p class="h4">Sign in</p>
                         
@@ -49,8 +49,8 @@
                     </form>
             </div>
         
-            <div *ngIf="!logIn">
-                <div class="signUp">Sign up</div>
+            <div *ngIf="!formType">
+                    <button class="CTAbutton" (click)="formType=!formType">Sign in</button>
                     <form [formGroup] ="signUpForm" (ngSubmit)="signUp()">
 
                         {{signUpForm.value | json}}
@@ -78,7 +78,7 @@
             </svg>
             <div class="signUp5e4610ff">Sign up</div>
             <div class="group34">
-                <div class="buttone054a031" (click)="signUp(username, password)">
+                <div class="buttone054a031" (click)="signUp()">
                     <div class="rectangle15e039ec0e"></div>
                     <div class="signUp">Sign up</div>
                 </div>
@@ -135,6 +135,7 @@
                 <div class="x161779">161779</div>
             </div>
         </div>
+
         <div class="footer">
             <div class="rectangle19"></div>
             <div class="copyright">
