@@ -31,10 +31,16 @@ export class HomeComponent implements OnInit {
       console.log(response)
       for (let responseObject in response) {
         this.response_html.push(response[responseObject]);
-        // console.log(this.response_html[responseObject].filePath)
+        //console.log(this.response_html[responseObject].filePath)
       }
-      this.updateCurrentPath(response[0].filePath);
-      this.home = this.currentPath;
+      var temp = this.response_html[0].filePath
+      var lastIndex = temp.lastIndexOf("/");
+      temp = temp.substring(0, lastIndex + 1);
+      console.log(temp)
+
+      //this.updateCurrentPath(temp);
+      this.home = temp
+      this.currentPath = temp;
       console.log('home', this.home)
     });
 
@@ -76,9 +82,9 @@ export class HomeComponent implements OnInit {
 
   updateCurrentPath(path) {
     this.currentPath = '';
-    let pathArray = path.split('\\');
+    let pathArray = path.split('/');
     for (let i = 0; i < pathArray.length - 1; i++) {
-      this.currentPath += pathArray[i] + "\\";
+      this.currentPath += pathArray[i] + "/";
     }
     console.log("current ", this.currentPath);
   }
