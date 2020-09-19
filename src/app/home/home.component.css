@@ -169,39 +169,37 @@ div.contents{
     height: 534px;
 }
 */
-button.directory{
+
+button.directory {
     margin: 8px 20px;
     width: 160px;
     height: 49px;
     background: #E0E0E0 0% 0% no-repeat padding-box;
     border-radius: 10px;
     opacity: 0.9;
-
     text-align: left;
     font-family: 'Poppins', sans-serif;
-    font-size: 10px; 
+    font-size: 10px;
     font-weight: 400;
     color: #292F36 0% 0% no-repeat padding-box;
     opacity: 1;
 }
 
-button.file{
-    margin-top: 8px 20px 8px 20px; 
+button.file {
+    margin-top: 8px 20px 8px 20px;
     width: 160px;
     height: 93px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 10px;
     opacity: 0.9;
     top: 385px;
-
     text-align: left;
     font-family: 'Poppins', sans-serif;
-    font-size: 10px; 
+    font-size: 10px;
     font-weight: 400;
     color: #292F36 0% 0% no-repeat padding-box;
     opacity: 1;
 }
-
 
 html {
     height: 100%;
@@ -1420,6 +1418,195 @@ body {
     height: 100%;
     left: 29.00px;
     top: 60.00px;
+}
+
+.driveAppHome1366x784 .filesPanel .uploadFile {
+    position: absolute;
+    box-sizing: content-box;
+    -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    opacity: 1;
+    cursor: default;
+    margin-top: 0.00px;
+    margin-right: 50.00px;
+    margin-bottom: 0.00px;
+    margin-left: 0.00px;
+    padding-top: 0.00px;
+    padding-right: 0.00px;
+    padding-bottom: 0.00px;
+    padding-left: 0.00px;
+    color: rgba(78, 205, 196, 1);
+    width: fit-content;
+    height: 20px;
+    left: 0px;
+    top: 20.00px;
+}
+
+.driveAppHome1366x784 .filesPanel .uploadFile .Text {
+    position: absolute;
+    box-sizing: content-box;
+    -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    opacity: 1;
+    cursor: default;
+    margin-top: 0.00px;
+    margin-right: 0.00px;
+    margin-bottom: 0.00px;
+    margin-left: 0.00px;
+    padding-top: 0.00px;
+    padding-right: 0.00px;
+    padding-bottom: 0.00px;
+    padding-left: 0.00px;
+    /* background-color: rgba(255, 255, 255, 0); */
+    text-align: right;
+    letter-spacing: 0.07px;
+    color: rgba(78, 205, 196, 1);
+    /* -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0); */
+    font-size: 16.00px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: Poppins, Arial;
+    text-decoration: none;
+    box-shadow: none;
+    overflow-x: unset;
+    overflow-y: unset;
+    white-space: pre;
+    width: fit-content;
+    height: fit-content;
+    left: 350.00px;
+    top: 0.00px;
+}
+
+.driveAppHome1366x784 .filesPanel .uploadFile .selectFile {
+    position: absolute;
+    left: 460px;
+    top: 0 px;
+    overflow: hidden;
+    height: 20px;
+    align-content: center;
+}
+
+.driveAppHome1366x784 .filesPanel .iconAwesomePlusCircle {
+    position: absolute;
+    box-sizing: content-box;
+    -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    opacity: 1;
+    cursor: default;
+    margin-top: 0.00px;
+    margin-right: 0.00px;
+    margin-bottom: 0.00px;
+    margin-left: 0.00px;
+    padding-top: 0.00px;
+    padding-right: 0.00px;
+    padding-bottom: 0.00px;
+    padding-left: 0.00px;
+    fill: rgba(78, 205, 196, 1);
+    box-shadow: none;
+    width: 18.00px;
+    height: 18.00px;
+    left: 657.00px;
+    top: 21.00px;
+}
+
+.driveAppHome1366x784 .filesPanel .createFolder {
+    position: absolute;
+    box-sizing: content-box;
+    -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    opacity: 1;
+    cursor: default;
+    margin-top: 0.00px;
+    margin-right: 0.00px;
+    margin-bottom: 0.00px;
+    margin-left: 0.00px;
+    padding-top: 0.00px;
+    padding-right: 0.00px;
+    padding-bottom: 0.00px;
+    padding-left: 0.00px;
+    /* background-color: rgba(255, 255, 255, 0); */
+    text-align: center;
+    letter-spacing: 0.07px;
+    color: rgba(78, 205, 196, 1);
+    /* -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0); */
+    font-size: 14.00px;
+    font-weight: 300;
+    font-style: normal;
+    font-family: Poppins, Arial;
+    text-decoration: none;
+    box-shadow: none;
+    overflow-x: unset;
+    overflow-y: unset;
+    white-space: pre;
+    width: 38.00px;
+    height: 25.00px;
+    left: 30.00px;
+    top: 70.00px;
+}
+
+.driveAppHome1366x784 .filesPanel .createFolder .Text {
+    position: absolute;
+    box-sizing: content-box;
+    -ms-transform: rotate(0.00deg);
+    -webkit-transform: rotate(0.00deg);
+    transform: rotate(0.00deg);
+    -ms-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    opacity: 1;
+    cursor: default;
+    margin-top: 0.00px;
+    margin-right: 0.00px;
+    margin-bottom: 0.00px;
+    margin-left: 0.00px;
+    padding-top: 0.00px;
+    padding-right: 0.00px;
+    padding-bottom: 0.00px;
+    padding-left: 0.00px;
+    /* background-color: rgba(255, 255, 255, 0); */
+    text-align: center;
+    letter-spacing: 0.07px;
+    color: rgba(78, 205, 196, 1);
+    /* -webkit-text-stroke: 1.00px rgba(0, 0, 0, 0); */
+    font-size: 14.00px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: Poppins, Arial;
+    text-decoration: none;
+    box-shadow: none;
+    overflow-x: unset;
+    overflow-y: unset;
+    white-space: pre;
+    width: fit-content;
+    height: 20.00px;
+    left: 0.00px;
+    top: 0.00px;
+}
+
+.driveAppHome1366x784 .filesPanel .createFolder .folderName {
+    position: absolute;
+    border-width: thin;
+    border-style: solid;
+    border-color: rgba(78, 205, 196, 1);
+    height: 20px;
+    left: 120px;
+    overflow: auto;
 }
 
 .driveAppHome1366x784 .filesPanel .foldersd4566bdd .foldersCa4bd89dfd03 {

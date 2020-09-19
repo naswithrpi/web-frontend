@@ -212,6 +212,7 @@ export class HomeComponent implements OnInit {
   }
 
   getUserActivity() {
+    this.user_activity = []
     var ip = 'http://' + this.IP_ADDRESS + '/getUserActivity'
     let obs = this.http.get(ip);
     obs.subscribe((response) => {
