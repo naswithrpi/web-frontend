@@ -109,7 +109,7 @@ export class HomeComponent implements OnInit {
       this.refresh();
       console.log(response);
     })
-    this.updateUserActivity("File deleted", path);
+    this.updateUserActivity("Deleted", path);
     this.refresh();
   }
 
