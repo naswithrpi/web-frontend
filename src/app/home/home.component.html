@@ -248,13 +248,18 @@ a
                     <a *ngFor="let item of response_html">
                         <a *ngIf="item.directory">
                             <button class="directory" (click)="getContents(item.filePath)"> {{item.filePath}} </button>
-                            <button style="margin: 10px;" class="fas fa-trash" (click)="delete(item.filePath)"></button>
-                            <!--img src="../../assets/images/trash.svg"-->
+                            <!--button style="margin: 10px;" class="fas fa-trash"
+                                (click)="delete(item.filePath)">Delete</button-->
+                            <img (click)="delete(item.filePath)" style="height: 30px; width: 30px; margin-top: 50px;"
+                                src="../../assets/images/trash.svg">
                         </a>
 
                         <a *ngIf="!(item.directory)">
                             <button class="file"> {{item.filePath}} </button>
-                            <button style="margin: 10px;" class="fas fa-trash" (click)="delete(item.filePath)"></button>
+                            <!--button style="margin: 10px;" class="fas fa-trash"
+                                (click)="delete(item.filePath)">Delete</button-->
+                            <img (click)="delete(item.filePath)" style="height: 30px; width: 30px; margin-top: 50px;"
+                                src="../../assets/images/trash.svg">
                         </a>
                     </a>
                 </div>
