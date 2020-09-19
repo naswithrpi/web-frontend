@@ -319,8 +319,6 @@ a
                 </div>
             </div-->
 
-
-
             <svg (click)="onUpload()" preserveAspectRatio="none" viewBox="0.5625 0.5625 18 18"
                 class="iconAwesomePlusCircle">
                 <path
@@ -347,7 +345,16 @@ a
             <div class="rectangle4"></div>
             <div class="activity">Activity</div>
             <div class="activityGrid">
-                <div class="group1676f2d88"> <svg preserveAspectRatio="none" viewBox="0 0 40 40"
+                <a *ngFor="let item of user_activity">
+                    <div class="monicaUploadedFilejpged7e18f3">
+                        <a *ngIf="item.username">
+                            <p>{{item.username}}</p>
+                            <p>{{item.activity}}</p>
+                            <br>
+                        </a>
+                    </div>
+                </a>
+                <!--div class="group1676f2d88"> <svg preserveAspectRatio="none" viewBox="0 0 40 40"
                         class="ellipse33f2c7ec5">
                         <defs>
                             <pattern id="img-ellipse33f2c7ec5" patternContentUnits="userSpaceOnUse" width="100%"
@@ -472,7 +479,7 @@ a
                                 2020 • 3:37pm</div>
                         </div>
                     </div>
-                </div>
+                </div-->
             </div>
         </div>
         <div class="profile">

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ResponseModel } from './response';
+import { UserActivityModel } from './useractivity';
 
 @Component({
   selector: 'home',
@@ -10,9 +11,10 @@ import { ResponseModel } from './response';
 export class HomeComponent implements OnInit {
 
   // Enter IP:PORT
-  IP_ADDRESS = '192.168.0.103:8080'
+  IP_ADDRESS = '192.168.0.106:8080'
 
   response_html: Array<ResponseModel> = [];
+  user_activity: Array<UserActivityModel> = [];
   home: String;
   currentPath: string = '';
   space_usage_details: any;
@@ -45,6 +47,7 @@ export class HomeComponent implements OnInit {
     });
 
     this.getSpaceUsage()
+    this.getUserActivity()
   }
 
   getContents(path) {
@@ -97,6 +100,7 @@ export class HomeComponent implements OnInit {
   refresh() {
     console.log('Refreshing')
     this.getContents(this.currentPath);
+    this.getUserActivity()
   }
 
   delete(path) {
@@ -105,6 +109,7 @@ export class HomeComponent implements OnInit {
       this.refresh();
       console.log(response);
     })
+    this.updateUserActivity("File deleted", path);
     this.refresh();
   }
 
@@ -130,6 +135,7 @@ export class HomeComponent implements OnInit {
     this.http.post(ip, path).subscribe((response) => {
       console.log(response);
     })
+    this.updateUserActivity("New directory created", this.dir_name);
     this.refresh();
     this.createDirectoryFlag = false;
   }
@@ -165,6 +171,7 @@ export class HomeComponent implements OnInit {
       var ip = 'http://' + this.IP_ADDRESS + '/uploadFile'
       this.http.post(ip, fileUpload).subscribe((response) => {
         console.log('Upload response', response);
+        this.updateUserActivity("New file created", this.selectedFile.name);
         this.refresh()
       });
     } else {
@@ -202,5 +209,34 @@ export class HomeComponent implements OnInit {
 
   onTextEntered(event) {
     console.log(event)
+  }
+
+  getUserActivity() {
+    var ip = 'http://' + this.IP_ADDRESS + '/getUserActivity'
+    let obs = this.http.get(ip);
+    obs.subscribe((response) => {
+      console.log(response)
+      for (let responseObject in response) {
+        this.user_activity.push(response[responseObject]);
+        //console.log(this.user_activity[responseObject].username)
+      }
+    });
+  }
+
+  updateUserActivity(username: string, activity: string) {
+    const obj = {
+      'username': username,
+      'activity': activity
+    }
+    var ip = 'http://' + this.IP_ADDRESS + '/updateUserActivity'
+    this.http.post(ip, obj, {
+      headers: {
+        'content-type': 'application/json'
+      }
+    }).subscribe((response) => {
+      console.log(response)
+      this.refresh()
+    })
+
   }
 }

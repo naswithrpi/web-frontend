@@ -11,7 +11,7 @@ import { FormBuilder } from '@angular/forms';
 })
 export class AuthComponent implements OnInit {
 
-  IP_ADDRESS = '192.168.0.103:8080'
+  IP_ADDRESS = '192.168.0.106:8080'
 
   signInForm = this.formBuilder.group({
     'username': [''],
